@@ -30,14 +30,14 @@
         <ion-item menu-close class="item-divider">
           Admin
         </ion-item>
-         <ion-item menu-close href="#/app/browse">
-          Browse
+         <ion-item menu-close ng-repeat="org in vm.orgs.admin" >
+          {{org}}
         </ion-item>
         <ion-item menu-close class="item-divider">
           Member
         </ion-item>
-        <ion-item menu-close href="#/app/playlists">
-          Playlists
+        <ion-item menu-close ng-repeat="org in vm.orgs.member">
+          {{org}}
         </ion-item>
       </ion-list>
     </ion-content>
