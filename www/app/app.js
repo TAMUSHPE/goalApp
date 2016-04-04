@@ -28,7 +28,7 @@ angular.module('starter', ['ionic'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'app/menu/menu.html',
     controller: 'loginCtrl'
   })
 
