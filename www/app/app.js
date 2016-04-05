@@ -26,11 +26,12 @@ angular.module('starter', ['ionic'])
   $stateProvider
 
     .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'app/menu/menu.html',
-    controller: 'menuCtrl'
-  })
+      url: '/app',
+      abstract: true,
+      templateUrl: 'app/menu/menu.html',
+      controller: 'menuCtrl'
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -40,7 +41,14 @@ angular.module('starter', ['ionic'])
         }
       }
     })
-
+    .state('app.newOrg', {
+      url: '/new/organization',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/Organization/newOrg/newOrg.html',
+        }
+      }
+    })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {

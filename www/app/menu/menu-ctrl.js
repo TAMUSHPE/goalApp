@@ -1,8 +1,8 @@
 (function() {
 
 	angular.module('starter').controller('menuCtrl',
-	['$scope','$ionicModal', '$rootScope', menuCtrl ])
-	function menuCtrl($scope,$ionicModal, $rootScope){
+	['$scope','$ionicModal', '$rootScope','$state', menuCtrl ])
+	function menuCtrl($scope,$ionicModal, $rootScope, $state){
 		var vm =this;
 
 		this.orgs = {"admin": ["SHPE"],
@@ -19,6 +19,8 @@
 			console.log("test");
 			$scope.modal.show();
 		};
-
+		this.addOrg =function() {
+			$state.go('app.newOrg');
+		};
 	}
 })();
