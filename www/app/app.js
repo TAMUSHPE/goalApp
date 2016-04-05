@@ -21,7 +21,9 @@ angular.module('starter', ['ionic'])
     }
   });
 })
-
+.constant('_',
+    window._
+)
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
