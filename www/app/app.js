@@ -28,8 +28,8 @@ angular.module('starter', ['ionic'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'loginCtrl'
+    templateUrl: 'app/menu/menu.html',
+    controller: 'menuCtrl'
   })
 
   .state('app.search', {
