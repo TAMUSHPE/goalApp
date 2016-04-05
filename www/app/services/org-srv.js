@@ -1,4 +1,5 @@
 (function() {
+	'use strict';
 	angular.module('starter').service('OrgSrv',
 	[ '_',OrgSrv ])
 	function OrgSrv(_){

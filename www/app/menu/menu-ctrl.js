@@ -1,5 +1,5 @@
 (function() {
-
+	'use strict';
 	angular.module('starter').controller('menuCtrl',
 	['$scope','$ionicModal', '$rootScope','$state', menuCtrl ])
 	function menuCtrl($scope,$ionicModal, $rootScope, $state){
