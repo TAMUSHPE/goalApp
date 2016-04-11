@@ -40,8 +40,8 @@
         <ion-item menu-close class="item-divider">
           Member
         </ion-item>
-        <ion-item menu-close ng-repeat="org in vm.orgs.member">
-          {{org}}
+        <ion-item menu-close ng-repeat="org in vm.orgs">
+          {{org.name}}
         </ion-item>
       </ion-list>
     </ion-content>

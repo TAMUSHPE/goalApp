@@ -7,7 +7,7 @@
 		vm._orgs = orgApiSrv.query();	
 		vm._id = null;
 		this.getAll = function() {
-			return _orgs;
+			return vm._orgs;
 		};
 		this.getAllAdmin =function() {
 			vm.admin=	_.chain(vm._orgs)
