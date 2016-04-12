@@ -1,5 +1,5 @@
 (function() {
-
+	'use strict';
 	angular.module('starter').controller('loginCtrl',
 	[ '$scope', '$timeout', loginCtrl ])
 	function loginCtrl($scope, $timeout){

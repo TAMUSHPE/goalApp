@@ -17,11 +17,20 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+
 
     <!-- your app's js -->
     <script src="app/app.js"></script>
+
+    <!-- services -->
+    <script src="app/services/org-api-srv.js"></script>
+    <script src="app/services/org-srv.js"></script>
+    <!-- your app's js -->
     <script src="app/login/login-ctrl.js"></script>
     <script src="app/menu/menu-ctrl.js"></script>
+    <script src="app/organization/newOrg/newOrg-ctrl.js"></script>
   </head>
 
   <body ng-app="starter">
