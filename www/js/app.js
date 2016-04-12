@@ -31,7 +31,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
     .state('app.playlists', {
       url: '/playlists',
       views: {

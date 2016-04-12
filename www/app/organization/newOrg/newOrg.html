@@ -4,15 +4,6 @@
 		<label class="item item-input">
 			<input type="text" ng-model="vm.org.name" placeholder="Organization Name">
 		</label>
-<!-- 		<li class="item item-toggle">
- Private
- <label class="toggle toggle-assertive">
-   <input type="checkbox" ng-model="vm.org.private" >
-   <div class="track" ng-change="{{vm.org.private = !vm.org.private}}">
-     <div class="handle"></div>
-   </div>
- </label>
-</li> -->
 		<ion-toggle ng-model="vm.org.private" toggle-class="toggle-default" ng-checked={{vm.org.private}}>Private
 		</ion-toggle>
 
