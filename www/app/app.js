@@ -32,6 +32,15 @@ angular.module('starter', ['ionic'])
     controller: 'menuCtrl'
   })
 
+    .state('app.organizationView', {
+      url: '/organizationView',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/organizationView/organizationView.html'
+        }
+      }
+    })
+
   .state('app.search', {
     url: '/search',
     views: {
