@@ -1,14 +1,10 @@
 (function() {
-
+	'use strict';
 	angular.module('starter').controller('menuCtrl',
-	['$scope','$ionicModal', '$rootScope', menuCtrl ])
-	function menuCtrl($scope,$ionicModal, $rootScope){
+	['$scope','$ionicModal', '$rootScope','$state','orgSrv', menuCtrl ])
+	function menuCtrl($scope,$ionicModal, $rootScope, $state, orgSrv){
 		var vm =this;
-
-		this.orgs = {"admin": ["SHPE", "IEEE"],
-					 "member": ["TAMUHACK"]
-					};
-
+		this.orgs = orgSrv.getAll();
 			// Create the login modal that we will use later
 		$ionicModal.fromTemplateUrl('app/login/login.html', {
 			scope: $scope
@@ -19,6 +15,8 @@
 			console.log("test");
 			$scope.modal.show();
 		};
-
+		this.addOrg =function() {
+			$state.go('app.newOrg');
+		};
 	}
 })();

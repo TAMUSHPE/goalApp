@@ -1,0 +1,15 @@
+<ion-view view-title="New Organization" ng-controller="newOrgCtrl as vm">
+  <ion-content>
+   	<div class="list list-inset">
+		<label class="item item-input">
+			<input type="text" ng-model="vm.org.name" placeholder="Organization Name">
+		</label>
+		<ion-toggle ng-model="vm.org.private" toggle-class="toggle-default" ng-checked={{vm.org.private}}>Private
+		</ion-toggle>
+
+		<button class="button button-full" ng-click="vm.newOrg(vm.org)">
+		  Submit
+		</button>
+	</div>
+  </ion-content>
+</ion-view>
