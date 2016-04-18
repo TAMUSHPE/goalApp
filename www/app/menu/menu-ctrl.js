@@ -5,7 +5,7 @@
 	function menuCtrl($scope,$ionicModal, $rootScope){
 		var vm =this;
 
-		this.orgs = {"admin": ["SHPE"],
+		this.orgs = {"admin": ["SHPE", "IEEE"],
 					 "member": ["TAMUHACK"]
 					};
 
