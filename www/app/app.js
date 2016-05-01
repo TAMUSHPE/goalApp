@@ -41,6 +41,15 @@ angular.module('starter', ['ionic'])
       }
     })
 
+    .state('app.createGoal', {
+      url: '/createGoal',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/createGoal/createGoal.html'
+        }
+      }
+    })
+
   .state('app.search', {
     url: '/search',
     views: {
