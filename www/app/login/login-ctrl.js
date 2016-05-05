@@ -26,7 +26,6 @@
 				email: profileInfo.email,
 	      picture : "http://graph.facebook.com/" + authResponse.userID + "/picture?type=large"
 	    });
-	    $scope.request(profileInfo);
 	    $scope.request(authResponse);
 	    $ionicLoading.hide();
 	    $state.go('app.newOrg');
@@ -63,7 +62,7 @@
 	  var params = {user: data};
 	  console.log(params);
 	    $http({
-	    url: 'http://159.203.93.46:3000/register',
+	    url: 'http://159.203.93.46:3000/login',
 	    method: 'POST',
 	    // Make sure to inject the service you choose to the controller
 	    data:  $httpParamSerializer(params) ,

@@ -41,7 +41,7 @@
           Member
         </ion-item>
         <!-- fix to point to organizationView -->
-        <ion-item menu-close ng-repeat="org in vm.orgs">
+        <ion-item menu-close ng-repeat="org in vm.orgs" ui-sref="app.organizationView">
           {{org.name}}
         </ion-item>
 
