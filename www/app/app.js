@@ -47,7 +47,7 @@ angular.module('starter', ['ionic','ngResource'])
       url: '/new/organization',
       views: {
         'menuContent': {
-          templateUrl: 'app/Organization/newOrg/newOrg.html',
+          templateUrl: 'app/organization/newOrg/newOrg.html',
         }
       }
     })
@@ -59,7 +59,11 @@ angular.module('starter', ['ionic','ngResource'])
         controller: ''
       }
     }
-  });
+  })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'app/login/login.html'
+  });;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/login');
 });

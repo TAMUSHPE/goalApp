@@ -1,22 +1,23 @@
 (function() {
 	'use strict';
 	angular.module('starter').controller('menuCtrl',
-	['$scope','$ionicModal', '$rootScope','$state','orgSrv', menuCtrl ])
-	function menuCtrl($scope,$ionicModal, $rootScope, $state, orgSrv){
+	['$scope','$ionicModal', '$rootScope','$state','orgSrv', '$ionicActionSheet', '$ionicLoading', 'userSrv', menuCtrl ])
+	function menuCtrl($scope,$ionicModal, $rootScope, $state, orgSrv,
+		 userSrv, $ionicActionSheet, $ionicLoading){
 		var vm =this;
 		this.orgs = orgSrv.getAll();
-			// Create the login modal that we will use later
-		$ionicModal.fromTemplateUrl('app/login/login.html', {
-			scope: $scope
-			}).then(function(modal) {
-			$scope.modal = modal;
-		});
-		this.login = function(){
-			console.log("test");
-			$scope.modal.show();
-		};
 		this.addOrg =function() {
 			$state.go('app.newOrg');
 		};
+		this.logout = function() {
+			console.log("clicked logout");
+        facebookConnectPlugin.logout(function(){
+          console.log("logout");
+          $state.go('login');
+        },
+        function(fail){
+          console.log("fail logout");
+        });
+	};
 	}
 })();
