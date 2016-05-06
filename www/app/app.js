@@ -24,7 +24,9 @@ angular.module('starter', ['ionic','ngResource'])
 .constant('_',
     window._
 )
-.config(function($stateProvider, $urlRouterProvider) {
+
+.config(function($stateProvider, $urlRouterProvider,$httpProvider) {
+  $httpProvider.interceptors.push('BearerAuthInterceptor');
   $stateProvider
 
     .state('app', {
@@ -47,19 +49,22 @@ angular.module('starter', ['ionic','ngResource'])
       url: '/new/organization',
       views: {
         'menuContent': {
-          templateUrl: 'app/Organization/newOrg/newOrg.html',
+          templateUrl: 'app/organization/newOrg/newOrg.html',
         }
       }
     })
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: ''
+  .state('app.organizationView', {
+      url: '/organizationView',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/organizationView/organizationView.html'
+        }
       }
-    }
-  });
+    })
+  .state('login', {
+    url: '/login',
+    templateUrl: 'app/login/login.html'
+  });;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/login');
 });

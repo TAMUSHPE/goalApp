@@ -18,8 +18,8 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="vm.login()">
-          Login
+        <ion-item menu-close ng-click="vm.logout()">
+          Logout
         </ion-item>
         <button class="button button-full button-stable" ng-click="vm.addOrg()">
           + Add Organization
@@ -41,7 +41,7 @@
           Member
         </ion-item>
         <!-- fix to point to organizationView -->
-        <ion-item menu-close ng-repeat="org in vm.orgs">
+        <ion-item menu-close ng-repeat="org in vm.orgs" ui-sref="app.organizationView">
           {{org.name}}
         </ion-item>
 
