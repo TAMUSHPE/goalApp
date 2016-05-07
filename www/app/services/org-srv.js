@@ -9,6 +9,8 @@
 			var promise = $http.get('http://159.203.93.46:3000/me').then(function(value)
 		    {
 		    	vm._orgs =  {member: value.data.member, admin: value.data.admin};
+		    	console.log(vm._orgs);
+		    	vm._orgsAll = value.data.member.concat(value.data.admin);
 		      return  {member: value.data.member, admin: value.data.admin};
 		    });
 		    return promise;
@@ -48,7 +50,7 @@
 			vm._orgs.slice(index,1);
 		};
 		this.get = function() {
-			return _.find(vm._orgs,function(org){
+			return _.find(vm._orgsAll,function(org){
 				return org._id == vm._id;
 			});
 		};

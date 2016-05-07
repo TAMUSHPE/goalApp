@@ -1,11 +1,13 @@
 (function() {
 	'use strict';
 	angular.module('starter').controller('organizationViewCtrl',
-	[ '$scope', organizationViewCtrl ]);
+	[ '$stateParams','$scope', 'orgSrv',organizationViewCtrl ]);
 
-	function organizationViewCtrl($scope){
+	function organizationViewCtrl($stateParams, $scope, orgSrv){
 		var vm =this;
-		
+		vm.id = $stateParams.id;
+        orgSrv.set(vm.id);
+        vm.org = orgSrv.get();
 		this.orgGoalsData = [
             {goal:'Clean',Description:'Describe'},
             {goal:'Get Krunk',Description:'Describe'},
