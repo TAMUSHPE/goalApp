@@ -1,30 +1,41 @@
 (function() {
 	'use strict';
 	angular.module('starter').controller('organizationViewCtrl',
-	[ '$stateParams','$scope', 'orgSrv',organizationViewCtrl ]);
+	[ '$stateParams','$scope', 'orgSrv', 'userSrv', '_',organizationViewCtrl ]);
 
-	function organizationViewCtrl($stateParams, $scope, orgSrv){
+	function organizationViewCtrl($stateParams, $scope, orgSrv,userSrv,_){
 		var vm =this;
 		vm.id = $stateParams.id;
         orgSrv.set(vm.id);
         vm.org = orgSrv.get();
-		this.orgGoalsData = [
-            {goal:'Clean',Description:'Describe'},
-            {goal:'Get Krunk',Description:'Describe'},
-            {goal:'Celebrate',Description:'Describe'}
-        ];
+        vm.message = vm.org.goals.length >= 1 ? true : false;
         this.myGoalsData = [
-        	{goal:'Clean Myself',Description:'Describe'},
-            {goal:'Get Krunk Myself',Description:'Describe'},
-            {goal:'Celebrate Myself',Description:'Describe'}
+        	{name:'Clean Myself',description:'Describe'},
+            {name:'Get Krunk Myself',description:'Describe'},
+            {name:'Celebrate Myself',description:'Describe'}
         ];
+        
+        function getUserGoals () {
+           vm.myGoalsData = _.map(vm.org.goals,function(element, index){
+                if ("creator" in element)               
+                    if (element.creator._id 
+                        == "571fdcea6ee1d6c859107eeb") 
+                        return element;
+            });
+           if (typeof vm.myGoalsData[0] === 'undefined') 
+                vm.myGoalsData = [];
+           console.log(vm.myGoalsData);
+        }
 
-        vm.goals = vm.orgGoalsData;
+        vm.goals = vm.org.goals;
 
     	this.orgGoals = function() {
-    		vm.goals = vm.orgGoalsData;
+            vm.message = vm.org.goals.length >= 1 ? true : false;
+    		vm.goals = vm.org.goals;
     	};  
     	this.myGoals = function() {
+            getUserGoals();
+            vm.message = vm.myGoalsData.length >= 1 ? true : false;
     		vm.goals = vm.myGoalsData;
     	};
 
