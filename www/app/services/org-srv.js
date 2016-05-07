@@ -3,7 +3,7 @@
 	angular.module('starter').service('orgSrv',
 	[ '_','orgApiSrv', '$http', '$q', orgSrv ])
 	function orgSrv(_, orgApiSrv, $http, $q){
-		var debug = true;
+		var debug = false;
 		var vm =this;
 		 function  query() {
 		 	if (!debug)
@@ -41,13 +41,18 @@
 			vm._id = id;
 		};
 		this.create=function(org){
-			if (debug) 
+			if (!debug) 
 				orgApiSrv.save(org,function(result) {
 					console.log(result);
-					vm._orgs.push(result);
+					vm._orgs.admin.push(result);
+					vm._orgsAll.push(result);
 				});
 			else
-				vm._orgs.push(org);	
+			{
+				vm._orgs.admin.push(org);	
+				vm._orgsAll.push(org);
+			}
+				
 		};
 		this.edit=function(params) {
 			var item = this.get();
