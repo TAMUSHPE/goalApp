@@ -34,17 +34,17 @@
         <ion-item menu-close class="item-divider">
           Admin
         </ion-item>
-         <ion-item menu-close ng-repeat="org in vm.orgs.admin" >
-          {{org}}
+         <ion-item menu-close ng-repeat="org in vm.orgs.admin  track by $index" >
+          {{org.name}}
         </ion-item>
         <ion-item menu-close class="item-divider">
           Member
         </ion-item>
         <!-- fix to point to organizationView -->
-        <ion-item menu-close ng-repeat="org in vm.orgs" ui-sref="app.organizationView">
+        <ion-item menu-close ng-repeat="org in vm.orgs.member  track by $index" ui-sref="app.organizationView">
           {{org.name}}
         </ion-item>
-
+      
       </ion-list>
     </ion-content>
   </ion-side-menu>

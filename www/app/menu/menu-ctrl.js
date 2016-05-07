@@ -5,7 +5,9 @@
 	function menuCtrl($scope,$ionicModal, $rootScope, $state, orgSrv,
 		 userSrv, $ionicActionSheet, $ionicLoading){
 		var vm =this;
-		this.orgs = orgSrv.getAll();
+		orgSrv.getAll().then(function(data) {
+			vm.orgs = data;
+		});
 		this.addOrg =function() {
 			$state.go('app.newOrg');
 		};
