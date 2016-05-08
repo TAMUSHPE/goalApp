@@ -42,11 +42,14 @@
 		};
 		this.create=function(org){
 			if (!debug) 
+			{
+
 				orgApiSrv.save(org,function(result) {
 					console.log(result);
 					vm._orgs.admin.push(result);
 					vm._orgsAll.push(result);
 				});
+			}
 			else
 			{
 				vm._orgs.admin.push(org);	
