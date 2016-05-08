@@ -10,6 +10,7 @@
 		});
 		this.addOrg =function() {
 			$state.go('app.newOrg');
+			vm.orgs = orgSrv._orgs;
 		};
 		this.logout = function() {
 			console.log("clicked logout");
