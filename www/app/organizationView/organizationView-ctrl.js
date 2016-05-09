@@ -1,9 +1,10 @@
 (function() {
 	'use strict';
 	angular.module('starter').controller('organizationViewCtrl',
-	[ '$stateParams','$scope', 'orgSrv', 'userSrv', '_',organizationViewCtrl ]);
+	[ '$stateParams','$scope', 'orgSrv', 'userSrv', '_', 
+    '$ionicModal', organizationViewCtrl ]);
 
-	function organizationViewCtrl($stateParams, $scope, orgSrv,userSrv,_){
+	function organizationViewCtrl($stateParams, $scope, orgSrv,userSrv,_, $ionicModal){
 		var vm =this;
 		vm.id = $stateParams.id;
         orgSrv.set(vm.id);
@@ -38,6 +39,15 @@
             vm.message = vm.myGoalsData.length >= 1 ? true : false;
     		vm.goals = vm.myGoalsData;
     	};
+         $ionicModal.fromTemplateUrl('app/createGoal/createGoal.html', {
+            scope: $scope
+            }).then(function(modal) {
+            $scope.modal = modal;
+        });
 
+        this.addGoal = function(){
+            console.log("test");
+            $scope.modal.show();
+        };
 	}	
 })();

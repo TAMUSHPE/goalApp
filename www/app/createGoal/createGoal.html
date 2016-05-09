@@ -1,0 +1,19 @@
+<ion-modal-view title="Home" ng-controller="createGoalCtrl">
+        <ion-header-bar>
+            <h1 class="title">Let's make a goal!</h1>
+            <div class="buttons">
+                <button class="button button-clear" ng-click="closeCreateGoal()">Close</button>
+            </div>
+        </ion-header-bar>
+    <ion-content padding="true" class="has-header">    
+        <form class="list">
+            <label class="item item-input">
+                <input type="text" placeholder="Goal Title" ng-model="goal.title">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Description" ng-model="goal.description">
+            </label>
+        </form>
+        <button id="home-button10" class="button button-positive  button-block" ng-click="addGoal()">Add This Goal!</button>
+    </ion-content>
+</ion-modal-view>
