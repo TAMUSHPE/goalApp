@@ -3,7 +3,7 @@
 	angular.module('starter').service('orgSrv',
 	[ '_','orgApiSrv', '$http', '$q', orgSrv ])
 	function orgSrv(_, orgApiSrv, $http, $q){
-		var debug = false;
+		var debug = true;
 		var vm =this;
 		 function  query() {
 		 	if (!debug)
