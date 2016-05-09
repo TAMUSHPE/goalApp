@@ -28,7 +28,7 @@
 	    });
 	    $scope.request(authResponse);
 	    $ionicLoading.hide();
-	    $state.go('app.newOrg');
+	    $state.go('app.playlists');
 	  }, function(fail){
 	    //fail get profile info
 	    console.log('profile info fail', fail);
@@ -106,7 +106,7 @@
 					});
 				}else{
 					console.log("have user?", user.userID);
-					 $state.go('app.newOrg');
+					 $state.go('app.playlists');
 				}
 
 	   } else {

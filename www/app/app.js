@@ -54,7 +54,7 @@ angular.module('starter', ['ionic','ngResource'])
       }
     })
   .state('app.organizationView', {
-      url: '/organizationView',
+      url: '/organizationView/:id',
       views: {
         'menuContent': {
           templateUrl: 'app/organizationView/organizationView.html'

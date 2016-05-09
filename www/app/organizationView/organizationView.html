@@ -1,4 +1,4 @@
-<ion-view title="Organization Profile" ng-controller="organizationViewCtrl as vm">
+<ion-view title="{{vm.org.name}}" ng-controller="organizationViewCtrl as vm">
     <ion-content padding="true" class="has-header">
         <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
             <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
@@ -8,11 +8,11 @@
             <button id="profile-button7" class="button button-positive  button-block" ng-click="vm.orgGoals()">Org Goals</button>
             <button id="profile-button9" class="button button-positive  button-block" ng-click="vm.myGoals()">My Goals</button>
         </div>
-
         <ion-list>
             <ion-item ng-repeat="x in vm.goals">
-             {{x.goal}}
+             {{x.name}}
             </ion-item>
+            <p ng-hide="vm.message">You have no assigned Goals</p>
         </ion-list>
 
     </ion-content>
